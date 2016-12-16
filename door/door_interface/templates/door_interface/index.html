@@ -1,0 +1,25 @@
+{% load static %}
+
+<head>
+  <title>Edward Fan's Door</title>
+  <link rel="stylesheet" type="text/css" href="{% static 'door_interface/style.css' %}" />
+  <link href="https://fonts.googleapis.com/css?family=Space+Mono:400,700" rel="stylesheet" />
+</head>
+
+<body>
+  <div id="NW">
+    <p>Edward Fan</p>
+    <p>Room 378</p>
+  </div>
+  <div id="NE">
+    <p>{{ date }}</p>
+    <p>{{ time }}</p>
+  </div>
+  <div id="SW">
+    <p>Current status:</p>
+    <p>In</p>
+  </div>​
+  <div id="SE">
+    <img src={{meme_url}} />
+  </div>
+</body>
