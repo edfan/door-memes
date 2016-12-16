@@ -1,6 +1,10 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from django.conf import settings
+from django.views.decorators.csrf import csrf_exempt
+
+from .models import Status
+
 from datetime import datetime
 import facebook
 
@@ -16,11 +20,21 @@ def get_latest_meme():
 
 def index(request):
     now = datetime.now()
+    status = Status.objects.get(pk=1)
+    
     context = {
         'date': "{:%B %d}".format(now),
         'time': "{:%I:%M %p}".format(now),
         'meme_url': get_latest_meme(),
+        'status': status.current_status,
     }
     
     return render(request, 'door_interface/index.html', context)
-    
+
+@csrf_exempt 
+def update(request):
+    status = Status.objects.get(pk=1)
+    status.current_status = request.POST['status']
+    status.save()
+
+    return HttpResponseRedirect('/interface')

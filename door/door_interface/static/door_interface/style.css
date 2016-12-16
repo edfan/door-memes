@@ -11,7 +11,7 @@ body {
     font-family: 'Space Mono', monospace;
 }
 
-div {
+.q1 {
     position: fixed;
     width: 512px;
     height: 300px;
@@ -51,4 +51,43 @@ img {
     max-width: 100%;
     max-height: 100%;
     margin: auto auto auto auto;
+}
+
+.q2 {
+    position: fixed;
+    width: 256px;
+    height: 150px;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 300%;
+}
+
+#SNW {
+    top: 300px;
+    left: 0;
+    background-color: #4dd843;
+    color: #000000;
+}
+
+#SNE {
+    top: 300px;
+    left: 256px;
+    background-color: #d84343;
+    color: #000000;
+}
+
+#SSW {
+    top: 450px;
+    left: 0;
+    background-color: #edea3b;
+    color: #000000;
+}
+
+#SSE {
+    top: 450px;
+    left: 256px;
+    background-color: #3a3a3a;
+    color: #ffffff;
 }

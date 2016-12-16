@@ -2,24 +2,34 @@
 
 <head>
   <title>Edward Fan's Door</title>
-  <link rel="stylesheet" type="text/css" href="{% static 'door_interface/style.css' %}" />
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <link href="https://fonts.googleapis.com/css?family=Space+Mono:400,700" rel="stylesheet" />
+
+  <script src="{% static 'door_interface/script.js' %}"></script>
+  <link rel="stylesheet" type="text/css" href="{% static 'door_interface/style.css' %}" />
+
 </head>
 
 <body>
-  <div id="NW">
+  <div id="NW" class="q1">
     <p>Edward Fan</p>
     <p>Room 378</p>
   </div>
-  <div id="NE">
-    <p>{{ date }}</p>
-    <p>{{ time }}</p>
+  <div id="NE" class="q1">
+    <p id="date">{{ date }}</p>
+    <p id="time">{{ time }}</p>
   </div>
-  <div id="SW">
+  <div id="SW" class="q1">
     <p>Current status:</p>
-    <p>In</p>
+    <p id="status">{{ status }}</p>
   </div>​
-  <div id="SE">
+  <div id="SNW" class="q2" style="display: none;">In</div>
+  <div id="SNE" class="q2" style="display: none;">Out</div>
+  <div id="SSW" class="q2" style="display: none;">In Simmons</div>
+  <div id="SSE" class="q2" style="display: none;">Sleeping</div>
+  <div id="SE" class="q1">
     <img src={{meme_url}} />
   </div>
 </body>

@@ -3,3 +3,5 @@
 *local_settings.py
 *.pyc
 *.sqlite3
+door/src/
+door/door_interface/migrations/
